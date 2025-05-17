@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // tinh tong chu so 
+        function tongChuSo (n) {
+            var tong = 0 ;
+            while(n>0) {
+                tong += n%10;
+                // bo di chu so cuoi cung
+                n= Math.floor(n / 10) ;
+            }
+            document.write("tong chu so la " + tong) ;
+        }
+        tongChuSo(123);
+        // output : tong chu so la 6 
+        // end
+        // xin chao va hen gap lai , ket thuc Day 1 chuoi thu thach 30 ngay A+ Js
+    </script>
+    
+</body>
+</html>

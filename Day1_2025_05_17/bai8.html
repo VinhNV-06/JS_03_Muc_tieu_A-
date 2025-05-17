@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- xep loai diem -->
+     <script>
+        function xepLoai(diem) {
+            if (diem < 0 || diem > 10) {
+                document.write("diem khong hop le") ;
+            }
+            if(diem >= 9 ) {
+                document.write("xep loai Xuat Sac");
+            }
+            else if (diem >=8) {
+                document.write("xep loai Gioi");
+            }
+            else if (diem >=6.5) {
+                document.write("xep loai Kha");
+            }
+            else if (diem >=5) {
+                document.write("xep loai Trung Binh");
+            }
+            else {
+                document.write("xep loai Yeu");
+            }
+        }
+        xepLoai(6);
+        // output: xep loai Trung Binh
+     </script>
+    
+</body>
+</html>

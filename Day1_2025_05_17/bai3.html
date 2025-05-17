@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // dem so chia het cho ca 3 va 5
+      // tuc la so n chia het cho 15
+      function check(n) {
+        if (n < 0 || n > 100) {
+          document.write(n + "khong nam trong khoang tu 1 den 100");
+        } else {
+          if (n % 15 == 0) {
+            document.write(n + "chia het cho ca 3 va 5");
+          }
+        }
+      }
+      check(15);
+    //   output : 15 chia het cho ca 3 va 5
+    </script>
+  </body>
+</html>
