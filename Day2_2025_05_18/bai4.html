@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // kiem tra mat khau
+        function Check(n) {
+            if (n.length < 8 ) {
+                return false ;
+            }
+            // kiem tra xem co xuat hien chua hoa hay khong
+            var chuHoa = /[A-Z]/.test(n) ;
+            var chuThuong = /[a-z]/.test(n);
+            var chuSo = /[0-9]/.test(n);
+            return chuHoa && chuThuong && chuSo ;
+        }
+        document.write(Check('Matkhau1234'));
+    </script>
+    <!-- output : true -->
+     <!-- xong day 2 !!! -->
+    
+</body>
+</html>

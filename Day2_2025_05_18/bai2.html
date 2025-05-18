@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // dao nguoc mot chuoi  , dung ham for , while duyet tu cuoi ve dau 
+        // dung .length va str de chuyen ve chuoi
+        function daoNguocChuoi(n) {
+            var chuoi = "" ;
+            // do ham duyet tu 0 den n nen so cuoi cung la n - 1 
+            var i = n.length - 1  ;
+            while(i>=0) {
+                chuoi+= n[i] ;
+                i-- ;
+            }
+            document.write("chuoi dao nguoc tra ve : " + chuoi);
+
+
+        }
+        daoNguocChuoi("hello");
+        // output : chuoi dao nguoc tra ve : olleh
+    </script>
+</body>
+</html>

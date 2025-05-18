@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // kiem tra nam nhuan
+        // nam nhuan la nam ma chia het cho 400 hoac chia het cho 4 va khong chia het cho 100
+        function kiemTraNamNhuan(nam) {
+            if(nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)) {
+                document.write(nam+ " la nam nhuan");
+            }
+            else{
+                document.write(nam + " khong la nam nhuan");
+            }
+        }
+        kiemTraNamNhuan(2020) ;
+    </script>
+    <!-- output : 2020 la nam nhuan -->
+    
+</body>
+</html>

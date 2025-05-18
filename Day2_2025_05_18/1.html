@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // tra ve so fabonacy thu n 
+        function Check(n) {
+            //  hai so da biet dau tien
+            var a = 0 ;
+            var b = 1 ;
+            // neu n = 0 hoac n = 1 thi tra ve so fabonacy thu 0 hoac thu 1 
+            if (n==0) return 0 ;
+            if (n==1) return 1;
+            for (var i = 2 ; i <= n ; i++) {
+                c = a + b ;
+                a = b ;
+                b = c ;
+
+            }
+            document.write("tra ve so fabonacy : " + b) ;
+
+        }
+        Check(3)
+    </script>
+    
+</body>
+</html>
