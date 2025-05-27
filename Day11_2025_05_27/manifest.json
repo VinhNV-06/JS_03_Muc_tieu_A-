@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Dan Tri Title Change",
+  "version": "1.0",
+  "description": "thay doi tieu de trang dan tri",
+  "permissions":["activeTab", "scripting"],
+  "host_permissions": ["https://dantri.com.vn/*"],
+  "content_scripts": [
+    {
+        "matches": ["https://dantri.com.vn/*"],
+        "js": ["mainfest.js"],
+        "run_at": "document_idle"
+    }
+  ]
+}
