@@ -1,0 +1,39 @@
+body {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+    position: relative;
+    background-image: url(img/anh1.jpg);
+}
+
+.wrapper {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #ccc;
+    background-color: rgba(255,255,255,0.85);
+    padding: 30px 40px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+}
+
+select,button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+}
+
+button {
+    background: #f0f0f0;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-image 0.3s ease ;
+}
