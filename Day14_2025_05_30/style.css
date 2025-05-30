@@ -1,0 +1,65 @@
+body {
+  background: #ccc;
+  display: flex;
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 800px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 700px;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+button {
+  padding: 6px 20px;
+  background-color: rgb(11, 221, 11);
+  color: white;
+  border: 1px solid rgb(11, 221, 11);
+  border-radius: 5px;
+}
+
+
+.edit-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn:hover{
+    background: #0056b3;
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Thêm sinh viên vào danh sách</h2>
+        <form id="studentForm">
+            <strong>Mã sinh viên</strong><input type="text" id="maSv" placeholder="Mã Sinh Viên" required>
+            <strong>Họ Và tên</strong><input type="text" id="hoTen" placeholder="Họ và Tên" required>
+            <strong>Email</strong><input type="email" id="email" placeholder="Email" required>
+            <strong>Số Điện Thoại</strong><input type="text" id="sdt" placeholder="Số Điện Thoại " required>
+            <button type="submit" id="submitBtn">Thêm</button>
+
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã Sinh Viên</th>
+                    <th>Họ Tên</th>
+                    <th>Email</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                <!-- lưu dữ liệu mới được thêm vào ở đây -->
+
+            </tbody>
+        </table>
+
+    </div>
+    
+</body>
+</html>
