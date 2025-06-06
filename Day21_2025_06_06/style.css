@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
+    overflow: hidden;
+    color: white;
+    user-select: none;
+    font-family: "Exo 2", sans-serif;
+  }
+  h1.title {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 2.2rem;
+  }
+  p.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: #ffffbb;
+  }
+  
+  .sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    margin-top: -60px;
+    background: radial-gradient(circle, #ffdd33, #ccaa00);
+    border-radius: 50%;
+    box-shadow: 0 0 40px 15px #ffdd33aa, 0 0 60px 25px #ffaa0033;
+    z-index: 10;
+    animation: sunGlow 3s infinite alternate ease-in-out;
+  }
+  
+  @keyframes sunGlow {
+      0% {box-shadow: 0 0 40px 15px #ffdd33aa;}
+      100% {box-shadow: 0 0 70px 30px #ffaa0077;}
+  }
+  
+  /* Hệ mặt trời */
+  .solarSystem {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      /* để hành tinh nhân pointer riêng */
+      pointer-events: none; 
+  
+  }
+  
+  /* set màu cho các hành tinh và kích thước  ,tốc độ quay */
+  #orbit1 {
+      width: 200px;
+      height: 200px;
+      margin-left: -100px;
+      margin-top: -100px;
+      animation: orbitRotate 20s linear infinite;
+  }
+  #orbit2 {
+  
+      width: 300px;
+      height: 300px;
+      margin-left: -150px;
+      margin-top: -150px;
+      animation: orbitRotate 35s linear reverse infinite;
+  
+  }
+  #orbit3 {
+  
+      width: 420px;
+      height: 420px;
+      margin-left: -210px;
+      margin-top: -210px;
+      animation: orbitRotate 50s linear infinite ;
+  }
+  #orbit4{
+  
+      width: 570px;
+      height: 570px;
+      margin-left: -285px;
+      margin-top: -285px;
+      animation: orbitRotate 70s linear reverse infinite;
+  }
+  #orbit5 {
+  
+      width: 700px;
+      height: 700px;
+      margin-left: -350px;
+      margin-top: -350px;
+      animation: orbitRotate 90s linear infinite;
+  }
+  
+  @keyframes orbitRotate {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+  }
+  /* orbit vòng quay hành tinh */
+  .orbit {
+      position: absolute;
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: center center;
+      pointer-events: none;
+  }
