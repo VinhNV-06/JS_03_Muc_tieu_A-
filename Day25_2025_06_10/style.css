@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
+  overflow: hidden;
+  color: white;
+  user-select: none;
+  font-family: "Exo 2", sans-serif;
+}
+nav {
+  background: rgba(10,10,30,0.95);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #f5d742;
+}
+
+/* sections */
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+
+}
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+section p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+/* home section */
+
+#home button {
+  padding: 10px 25px;
+  background: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #000;
+  margin-top: 20px;
+  transition: color 0,3s ease;
+  
+}
+#home button:hover{
+  background: #ffc107;
+}
+
+/* modul cho hệ mặt trời  */
+
+
+#solarModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
+  z-index: 2000;
+  overflow: hidden;
+}
+#solarModal .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f5d742;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#solarModal .close-modal:hover {
+  background: #ffc107;
+}
+
+/* Hệ Mặt Trời Styles */
+#solarModal h1.title {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+#solarModal p.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  color: #bbbbff;
+}
+#welcomeMessage {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(10, 10, 30, 0.9);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+  z-index: 2500;
+  display: none;
+}
+#clock {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(10, 10, 30, 0.9);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ddd;
+  z-index: 2500;
+}
+#sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: radial-gradient(circle, #ffdd33, #ccaa00);
+  border-radius: 50%;
+  box-shadow:
+    0 0 40px 15px #ffdd33aa,
+    0 0 60px 25px #ffaa0033;
+  z-index: 10;
+  animation: sunGlow 3s infinite alternate ease-in-out;
+}
+@keyframes sunGlow {
+  0% { box-shadow: 0 0 40px 15px #ffdd33aa; }
+  100% { box-shadow: 0 0 70px 30px #ffaa0077; }
+}
+#solarSystem {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0; left: 0;
+  pointer-events: none;
+}
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform-origin: center center;
+  pointer-events: none;
+}
+#orbit1 {
+  width: 200px; height: 200px;
+  margin-left: -100px; margin-top: -100px;
+  animation: orbitRotate 20s linear infinite;
+}
+#orbit2 {
+  width: 300px; height: 300px;
+  margin-left: -150px; margin-top: -150px;
+  animation: orbitRotate 35s linear reverse infinite;
+}
+#orbit3 {
+  width: 420px; height: 420px;
+  margin-left: -210px; margin-top: -210px;
+  animation: orbitRotate 50s linear infinite;
+}
+#orbit4 {
+  width: 570px; height: 570px;
+  margin-left: -285px; margin-top: -285px;
+  animation: orbitRotate 70s linear reverse infinite;
+}
+#orbit5 {
+  width: 700px; height: 700px;
+  margin-left: -350px; margin-top: -350px;
+  animation: orbitRotate 90s linear infinite;
+}
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.planet {
+  position: absolute;
+  top: 50%; left: 100%;
+  width: 80px; height: 80px;
+  margin-top: -40px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px 5px rgba(0, 255, 255, 0.6);
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  user-select: none;
+  z-index: 5;
+  background-size: cover;
+  background-position: center;
+}
+.planet:hover {
+  box-shadow: 0 0 35px 10px rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+.planet-label {
+  margin-top: 5px;
+  text-align: center;
+  color: #ddd;
+  font-weight: 500;
+  text-shadow: 0 0 5px #0008;
+  user-select: none;
+}
+.hidden {
+  display: none !important;
+}
+.planet-expanded {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin: 0 !important;
+  width: 250px !important;
+  height: 250px !important;
+  z-index: 999 !important;
+  box-shadow:
+    0 0 40px 15px rgba(255, 255, 200, 0.9);
+  transform: translate(-50%, -50%) !important;
+  transition: transform 0.5s ease !important;
+  background-size: cover !important;
+  background-position: center !important;
+  cursor: default !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 15px !important;
+  color: #fff !important;
+  text-shadow: 0 0 7px #000;
+  border-radius: 50% !important;
+  user-select: text !important;
+}
+#infoBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(10, 10, 30, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 30px #fff8;
+  color: white;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+  font-size: 15px;
+  line-height: 1.4;
+}
+#infoBox h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px #fff9;
+}
+#infoBox p {
+  white-space: pre-line;
+}
+#infoBox button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 8px 20px;
+  background: #f5d742;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  transition: background 0.3s ease;
+}
+#infoBox button:hover {
+  background: #ffc107;
+}
