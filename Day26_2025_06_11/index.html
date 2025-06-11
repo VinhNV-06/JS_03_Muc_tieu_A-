@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ mặt trời cá nhân của tôi</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo"><img src="img/snapedit_1749651590090.png" alt="logo"></div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home">
+      <div class="section_right">
+        <h4>Hello, my name is</h4>
+        <h2>Vinh Nguyen</h2>
+        <h5>I'am a <div class="blue"> Business Analyst</div></h5>
+        <button id="viewSolarSystem">See Summary</button>
+      </div>
+      <div class="section_left">
+        <img src="img/snapedit_1749537512650.png" alt="img_right">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        As a passionate developer, I thrive on exploring technology, crafting
+        engaging web designs, and bringing creative app ideas to life.
+      </p>
+    </section>
+
+    <section id="service">
+      <h2>Service</h2>
+      <p>
+        I provide web design, application development, and technology consulting
+        services. Whether you're a startup or a growing business, I help turn
+        ideas into user-friendly digital solutions that not only look great but
+        also solve real problems
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>HTML5, CSS3, JavaScript, React, Node.js, Git, Responsive Design.</p>
+    </section>
+
+    <section id="project">
+      <h2>Project</h2>
+      <p>
+        1. Website cá nhân<br />2. Ứng dụng quản lý công việc<br />3. Game đơn
+        giản trên trình duyệt
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: ban@example.com<br />Phone: 0123456789<br />LinkedIn:
+        linkedin.com/in/ban
+      </p>
+    </section>
+
+    <!-- Modal Hệ Mặt Trời -->
+    <div id="solarModal">
+      <button class="close-modal">X</button>
+      <h1 class="title">Hệ Mặt Trời Cá Nhân của bạn</h1>
+      <p class="subtitle">
+        Click vào từng hành tinh để khám phá thông tin của tôi!
+      </p>
+      <div id="welcomeMessage"></div>
+      <div id="clock"></div>
+      <div id="sun" title="Mặt trời - Tên của bạn"></div>
+      <div id="solarSystem">
+        <div id="orbit1" class="orbit">
+          <div
+            class="planet"
+            data-title="Giới thiệu"
+            data-info="Xin chào! Tôi là [Tên bạn]. Tôi đam mê công nghệ và thiết kế web."
+            style="
+              background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            "
+          >
+            <span class="planet-label">Giới thiệu</span>
+          </div>
+        </div>
+        <div id="orbit2" class="orbit">
+          <div
+            class="planet"
+            data-title="Kỹ năng"
+            data-info="HTML5, CSS3, JavaScript, React, Node.js, Git, Responsive Design"
+            style="
+              background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            "
+          >
+            <span class="planet-label">Kỹ năng</span>
+          </div>
+        </div>
+        <div id="orbit3" class="orbit">
+          <div
+            class="planet"
+            data-title="Dự án"
+            data-info="1. Website cá nhân\n2. Ứng dụng quản lý công việc\n3. Game đơn giản trên trình duyệt"
+            style="
+              background: linear-gradient(135deg, #fbc7a4 0%, #feae96 100%);
+            "
+          >
+            <span class="planet-label">Dự án</span>
+          </div>
+        </div>
+        <div id="orbit4" class="orbit">
+          <div
+            class="planet"
+            data-title="Sở thích"
+            data-info="Đọc sách, nghe nhạc, đi du lịch, chụp ảnh thiên nhiên và học thêm ngoại ngữ."
+            style="
+              background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            "
+          >
+            <span class="planet-label">Sở thích</span>
+          </div>
+        </div>
+        <div id="orbit5" class="orbit">
+          <div
+            class="planet"
+            data-title="Liên hệ"
+            data-info="Email: ban@example.com\nSố điện thoại: 0123456789\nLinkedIn: linkedin.com/in/ban"
+            style="
+              background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            "
+          >
+            <span class="planet-label">Liên hệ</span>
+          </div>
+        </div>
+      </div>
+      <div id="infoBox">
+        <h2 id="infoTitle"></h2>
+        <p id="infoContent"></p>
+        <button id="closeBtn">Quay lại hệ mặt trời</button>
+      </div>
+    </div>
+  </body>
+</html>
