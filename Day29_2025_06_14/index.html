@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ mặt trời cá nhân của tôi</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">
+        <img src="img/snapedit_1749651590090.png" alt="logo" />
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home">
+      <div class="section_right">
+        <h4>Hello, my name is</h4>
+        <h2>Vinh Nguyen</h2>
+        <h5>I'am a <span class="blue">Business Analyst</span></h5>
+        <button id="viewSolarSystem">See Summary</button>
+      </div>
+      <div class="section_left">
+        <img src="img/Space X Dragon.png" alt="img_right" />
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="hearding_subtitle">
+        <h2>About me</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          <p>Who I am</p>
+          <hr class="hr hr2" />
+        </div>
+      </div>
+      <div class="about-content">
+        <img
+          src="img/z5770883630637_a426cff080a5b9326d73aa94f7da3cc7.jpg"
+          alt="picture_me"
+        />
+        <p>
+          I'm currently pursuing my studies in Business Analysis, where I’m
+          learning how to bridge the gap between technology and business through
+          data-driven decisions, clear communication, and problem-solving
+          skills. Beyond my academic journey, I'm someone who loves to connect
+          with new people, explore fresh ideas, and truly enjoy life along the
+          way. I believe that building strong relationships and staying curious
+          are key to both personal growth and career success. If you're
+          interested in collaboration, learning together, or simply connecting —
+          don’t hesitate to reach out!
+        </p>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="hearding_subtitle">
+        <h2>My service</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          What I provide
+          <hr class="hr hr-2" />
+        </div>
+      </div>
+      <div class="service_content">
+        <div class="content conten_1">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h3>System & BA</h3>
+          <p>
+            Analyze business needs, gather requirements, design workflows, and
+            provide system solutions to ensure effective communication between
+            stakeholders and development teams.
+          </p>
+        </div>
+        <div class="content content_2">
+          <i class="fa-solid fa-object-group"></i>
+          <h3>UI/UX Design</h3>
+          <p>
+            Design intuitive, user-friendly interfaces and interactive
+            prototypes using tools like Figma to enhance user experience,
+            improve usability, and visualize product ideas effectively.
+          </p>
+        </div>
+        <div class="content content_3">
+          <i class="fa-solid fa-code"></i>
+          <h3>Frontend Development</h3>
+          <p>
+            Build responsive, interactive web interfaces using HTML, CSS, and
+            JavaScript frameworks like React to deliver smooth user experiences
+            across devices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="hearding_content">
+        <h2>My skills</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          <p>What I know</p>
+          <hr class="hr hr-2" />
+        </div>
+      </div>
+      <div class="content_skills">
+        <div class="content_left">
+          <h3>Technologies & Tools</h3>
+          <p class="subtitle">
+            Skilled in using modern web technologies and tools such as HTML,
+            CSS, JavaScript, and React to develop responsive interfaces.
+            Proficient with design and development tools like Figma, Git,
+            GitHub, and VS Code to create seamless, visually appealing, and
+            user-focused digital experiences.
+          </p>
+        </div>
+        <div class="content_right">
+          <div class="skill_item">
+            <label>HTML</label>
+            <div class="progress_bar">
+              <div class="progress" id="techProgress"></div>
+            </div>
+            <span>90%</span>
+          </div>
+          <div class="skill_item">
+            <label>JavaScript</label>
+            <div class="progress_bar">
+              <div class="progress" id="jsProgress"></div>
+            </div>
+            <span>75%</span>
+          </div>
+          <div class="skill_item">
+            <label>Python</label>
+            <div class="progress_bar">
+              <div class="progress" id="pythonProgress"></div>
+            </div>
+            <span>65%</span>
+          </div>
+          <div class="skill_item">
+            <label>MySQL</label>
+            <div class="progress_bar">
+              <div class="progress" id="sqlProgress"></div>
+            </div>
+            <span>50%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <h2>Project</h2>
+      <p>
+        1. Website cá nhân<br />2. Ứng dụng quản lý công việc<br />3. Game đơn
+        giản trên trình duyệt
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: ban@example.com<br />Phone: 0123456789<br />LinkedIn:
+        linkedin.com/in/ban
+      </p>
+    </section>
+
+    <!-- Modal Hệ Mặt Trời -->
+    <div id="solarModal">
+      <button class="close-modal">X</button>
+      <h1 class="title">Hệ Mặt Trời Cá Nhân của bạn</h1>
+      <p class="subtitle">
+        Click vào từng hành tinh để khám phá thông tin của tôi!
+      </p>
+      <div id="welcomeMessage"></div>
+      <div id="clock"></div>
+      <div id="sun" title="Mặt trời - Tên của bạn"></div>
+      <div id="solarSystem">
+        <div id="orbit1" class="orbit">
+          <div
+            class="planet"
+            data-title="Giới thiệu"
+            data-info="Xin chào! Tôi là [Tên bạn]. Tôi đam mê công nghệ và thiết kế web."
+            style="
+              background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            "
+          >
+            <span class="planet-label">Giới thiệu</span>
+          </div>
+        </div>
+        <div id="orbit2" class="orbit">
+          <div
+            class="planet"
+            data-title="Kỹ năng"
+            data-info="HTML5, CSS3, JavaScript, React, Node.js, Git, Responsive Design"
+            style="
+              background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            "
+          >
+            <span class="planet-label">Kỹ năng</span>
+          </div>
+        </div>
+        <div id="orbit3" class="orbit">
+          <div
+            class="planet"
+            data-title="Dự án"
+            data-info="1. Website cá nhân\n2. Ứng dụng quản lý công việc\n3. Game đơn giản trên trình duyệt"
+            style="
+              background: linear-gradient(135deg, #fbc7a4 0%, #feae96 100%);
+            "
+          >
+            <span class="planet-label">Dự án</span>
+          </div>
+        </div>
+        <div id="orbit4" class="orbit">
+          <div
+            class="planet"
+            data-title="Sở thích"
+            data-info="Đọc sách, nghe nhạc, đi du lịch, chụp ảnh thiên nhiên và học thêm ngoại ngữ."
+            style="
+              background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            "
+          >
+            <span class="planet-label">Sở thích</span>
+          </div>
+        </div>
+        <div id="orbit5" class="orbit">
+          <div
+            class="planet"
+            data-title="Liên hệ"
+            data-info="Email: ban@example.com\nSố điện thoại: 0123456789\nLinkedIn: linkedin.com/in/ban"
+            style="
+              background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            "
+          >
+            <span class="planet-label">Liên hệ</span>
+          </div>
+        </div>
+      </div>
+      <div id="infoBox">
+        <h2 id="infoTitle"></h2>
+        <p id="infoContent"></p>
+        <button id="closeBtn">Quay lại hệ mặt trời</button>
+      </div>
+    </div>
+  </body>
+</html>
