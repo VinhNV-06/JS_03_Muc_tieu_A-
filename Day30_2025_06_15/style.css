@@ -1,0 +1,1132 @@
+body {
+  margin: 0;
+  height: 100vh;
+  /* background: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg); */
+  background: #000;
+  color: white;
+  user-select: none;
+  font-family: "Exo 2", sans-serif;
+  box-sizing: border-box !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  background: none;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+nav.transparent {
+  /* NEW: Thêm lớp transparent để làm mờ thêm khi cuộn */
+  background: rgba(255, 255, 255, 0.2);
+}
+nav .logo img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+  margin-left: 60px;
+  margin-right: 700px;
+  margin-top: 20px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+nav .logo img:hover {
+  transform: scale(1.05);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  gap: 10px;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #f5d742;
+}
+
+/* sections */
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+section p {
+  max-width: 600px;
+  line-height: 1.6;
+  color: #fff;
+}
+/* home section */
+
+#home button {
+  padding: 15px 30px;
+  background: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #000;
+  margin-top: 20px;
+  transition: color 0, 3s ease;
+  width: 200px;
+  height: auto;
+}
+#home button:hover {
+  background: #ffc107;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 0 40px 40px;
+  height: 100vh;
+  position: relative;
+}
+#home .section_right {
+  flex-basis: 50%;
+  margin-left: 300px;
+  position: relative;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: space-between;
+  align-items: center; */
+}
+#home .link_icon {
+  position: static;
+  /* Adjust the distance from the bottom */
+  left: 50%;
+  transform: translateX(-70%); /* Center horizontally */
+  transform: translateY(450%);
+  display: flex;
+  gap: 25px;
+  flex-direction: row;
+  z-index: 10; /* Ensure icons are above other content */
+  /* bottom: 0; */
+  /* margin-top: 100px; */
+  margin-bottom: 0px;
+}
+
+#home .link_icon a {
+  color: #fff;
+  font-size: 2rem; /* Adjust icon size if needed */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#home .link_icon a:hover {
+  color: #f5d742; /* Hover color consistent with your theme */
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+#home .link_icon .fa-brands {
+  font-size: 45px;
+}
+#home .section_left {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 200px;
+}
+#home .section_right,
+#home .section_left {
+  width: 48%;
+}
+#home .section_left img {
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+/* @keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+} */
+#home .section_left img {
+  transform: scale(1.05);
+}
+#home h4 {
+  font-size: 35px;
+}
+#home h2 {
+  font-size: 50px;
+}
+#home h5 {
+  font-size: 25px;
+}
+#home .blue {
+  color: #f5d742;
+}
+#contactModal {
+  position: fixed; /* Giữ nguyên: Định vị cố định */
+  z-index: 1000; /* Thay đổi: Tăng z-index để hiển thị trên thanh nav (trước là 1) */
+  left: 50%; /* Thay đổi: Di chuyển đến giữa theo chiều ngang */
+  top: 20%; /* Thay đổi: Thêm khoảng cách 10% từ đầu trang để tránh che nav */
+  transform: translate(
+    -50%,
+    0
+  ); /* Thay đổi: Điều chỉnh để căn giữa chính xác */
+  width: 90%; /* Thay đổi: Giảm chiều rộng để phù hợp hơn (trước là 100%) */
+  max-width: 500px; /* Giữ nguyên: Giới hạn chiều rộng tối đa */
+  height: auto; /* Thay đổi: Chiều cao tự động thay vì 100% */
+  display: none; /* Giữ nguyên: Ẩn mặc định */
+  justify-content: center; /* Giữ nguyên: Căn giữa nội dung */
+  align-items: center; /* Giữ nguyên: Căn giữa nội dung */
+  background: #f8eedf; /* Giữ nguyên: Màu nền */
+  padding: 20px; /* Thay đổi: Thêm padding để nội dung không chạm mép */
+  border-radius: 5px; /* Thay đổi: Thêm bo góc cho đẹp */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thay đổi: Thêm bóng để nổi bật */
+  color: #333; /* Giữ nguyên: Màu chữ */
+  font-size: 16px; /* Giữ nguyên: Cỡ chữ */
+  /* Thêm lớp phủ mờ cho toàn bộ modal */
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 100px;
+  top: 100px;
+  width: 80%;
+  height: 80%;
+  display: none; /* Đặt cuối cùng, để ẩn mặc định */
+  /* justify-content: center;
+  align-items: center; */
+  
+}
+.modal_content {
+  background-color: #f8eedf;
+}
+
+.modal_content .close {
+  color: #8e1616;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.modal_content .close:hover,
+.modal_content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal_content .modal label {
+  font-weight: bold;
+}
+.modal_content input[type="text"],
+textarea,
+.modal_content input[type="file"] {
+  width: 400px;
+  /* height: 20px; */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.modal_content button {
+  background-color: #e8c999;
+  color: #000;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+.modal_content button:hover {
+  background: #f5d742;
+}
+.modal_content #contactForm {
+  margin: 0 auto;
+}
+.hearding_subtitle .subtitle p {
+  color: #f5d742 ;
+}
+/* section About me */
+#about .hearding_subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#about h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
+#about .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+#about .subtitle p {
+  margin-top: 5px;
+}
+#about .about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  flex-wrap: wrap;
+}
+#about .about-content p {
+  font-weight: bold;
+}
+#about .about-content img {
+  width: 250px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+#about hr {
+  border: none;
+  height: 2px;
+  background: #fff;
+  width: 50px;
+}
+#about .hr-1 {
+  margin-right: 5px;
+}
+#about .hr-2 {
+  margin-left: 5px;
+}
+/* service  */
+#service h2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+#service .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#service .subtitle p{
+  color: #f5d742;
+}
+#service hr {
+  border: none;
+  height: 2px;
+  background: #fff;
+  width: 50px;
+}
+#service .hr-1 {
+  margin-right: 5px;
+}
+#service .hr-2 {
+  margin-left: 5px;
+}
+#service .service_content {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+#service .service_content .content {
+  width: 300px;
+  height: 220px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+#service .service_content .content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.25),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+#service .service_content .content p {
+  color: black;
+}
+#service .service_content .content .fa-solid {
+  font-size: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+#service .service_content .content h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Skills */
+#skills h2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+#skills .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
+}
+#skills .hearding_content .subtitle p {
+  color: #f5d742;
+}
+#skills hr {
+  border: none;
+  height: 2px;
+  background: #fff;
+  width: 50px;
+}
+#skills .hr-1 {
+  margin-right: 5px;
+}
+#skills .hr-2 {
+  margin-left: 5px;
+}
+#skills .content_skills {
+  display: flex;
+  gap: 200px;
+}
+#skills .content_skills p {
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 20px 0;
+}
+#skills .content_skills h3 {
+  font-size: 25px;
+  padding: 10px 0;
+}
+#skills .progress_bar {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px 0;
+  background: white;
+  height: 5px;
+}
+#skills .progress {
+  height: 5px;
+  background: blue;
+  width: 0;
+  transition: width 2s ease-in-out;
+}
+#skills .skill_item {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#skills .wrapper_skill_content {
+  display: flex;
+  gap: 200px;
+  justify-content: center;
+  align-items: center;
+}
+/* project */
+#project h2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+#project .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #f5d742;
+}
+#project hr {
+  border: none;
+  height: 2px;
+  background: #fff;
+  width: 50px;
+}
+#project .hr-1 {
+  margin-right: 5px;
+}
+#project .hr-2 {
+  margin-left: 5px;
+}
+.card-wrapper {
+  max-width: 1100px ;
+  margin: 0 60px 35px;  /* auto ở trái/phải để căn giữa */
+  overflow: hidden;
+}
+
+.card-list .card-item .card-link {
+  user-select: none;
+  display: block; 
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: 0.2s ease;
+  min-height: 400px;
+  
+}
+.swiper {
+  max-width: 1200px;
+  margin: 15px auto;
+}
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
+}
+.card-list .card-item {
+  list-style: none;
+}
+.card-list .card-item .card-link:hover {
+  border-color: #5372F0;
+}
+.card-list .card-link .card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-list .card-link .badge {
+  color: #5372F0;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 16px 0 18px;
+  background: #DDE4FF;
+  width: fit-content;
+  border-radius: 50px;
+}
+
+.card-list .card-link .badge.books {
+  color: #b22485;
+  background: #F7DFF5;
+}
+.card-list .card-link .badge.shopping {
+  color: #b25a2b;
+  background: #F7DFF5;
+}
+.card-list .card-link .badge.gymer {
+  color: #205c20;
+  background: #F7DFF5;
+}
+.card-list .card-link .badge.d {
+  color: #856404;
+  background: #F7DFF5;
+}
+.card-list .card-link .badge.company {
+  color: #3a152e;
+  background: #F7DFF5;
+}
+.card-list .card-link .card-title {
+  font-size: 25px !important;
+  color: #000;
+  font-weight: 600;
+}
+.card-list .card-link .card-button {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin: 30px 0 5px;
+  color: #5372F0 ;
+  background: none;
+  border: 2px solid #5372F0;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: 0.4 ease;
+}
+.card-list .card-link:hover .card-button {
+  color: #fff;
+  background: #5372F0;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #5372F0;
+}
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+
+}
+.card-wrapper .swiper-slide-button {
+  color: #5372F0 ;
+  margin-top: -35px;
+
+}
+/* .swiper-button-prev,
+.swiper-button-next {
+  color: #3372f6;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: -60px; 
+}
+
+.swiper-button-next {
+  right: -60px; 
+} */
+
+
+
+@media screen and (max-width: 768px) {
+  .card-wrapper {
+      margin: 0 10px 25px;
+  }
+  .card-wrapper .swiper-slide-button {
+      display: none;
+  }
+  
+}
+/* contact */
+#contact hr {
+  border: none;
+  height: 2px;
+  background: #fff;
+  width: 50px;
+}
+#contact .hr-1 {
+  margin-right: 5px;
+}
+#contact .hr-2 {
+  margin-left: 5px;
+}
+#contact h2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+#contact .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+#contact .heading_content .subtitle p{
+  color: #f5d742;
+}
+#contact .fa-solid {
+  font-size: 32px;
+  color: #f5d742;
+}
+#contact p {
+  font-size: 18px;
+}
+#contact .bold {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+#contact .content_left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 400px;
+  justify-content: center;
+}
+#contact .adress {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+#contact .adress i {
+  margin-bottom: 10px;
+  width: 24px;
+  text-align: center;
+}
+#contact .subtitlecontent {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  /* position: absolute;
+  top: -20px;
+  left: 50px; */
+}
+.content_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  align-items: stretch;
+}
+.content_right form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.content_right form .text {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.content_right form .area {
+  padding: 30px 10px 30px 10px;
+}
+.content_right button {
+  background-color: #fff;
+  width: 40%;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+}
+.content_right button:hover {
+  background: #f5d742;
+  border: 1px solid #000;
+}
+/* modul cho hệ mặt trời  */
+#solarModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
+  z-index: 2000;
+  overflow: hidden;
+}
+#solarModal .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f5d742;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#solarModal .close-modal:hover {
+  background: #ffc107;
+}
+/* Hệ Mặt Trời Styles */
+#solarModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(https://www.solarsystemscope.com/textures/download/8k_stars.jpg);
+  z-index: 2000;
+  overflow: hidden;
+}
+#solarModal .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f5d742;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#solarModal .close-modal:hover {
+  background: #ffc107;
+}
+
+/* Hệ Mặt Trời Styles */
+#solarModal h1.title {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+#solarModal p.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  color: #bbbbff;
+}
+#welcomeMessage {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(10, 10, 30, 0.9);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+  z-index: 2500;
+  display: none;
+}
+#clock {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(10, 10, 30, 0.9);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ddd;
+  z-index: 2500;
+}
+#sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: radial-gradient(circle, #ffdd33, #ccaa00);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px #ffdd33aa, 0 0 50px 20px #ffaa0033;
+  z-index: 10;
+  animation: sunGlow 3s infinite alternate ease-in-out;
+}
+@keyframes sunGlow {
+  0% {
+    box-shadow: 0 0 30px 10px #ffdd33aa;
+  }
+  100% {
+    box-shadow: 0 0 60px 25px #ffaa0077;
+  }
+}
+#solarSystem {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.orbit {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  pointer-events: none;
+}
+#orbit1 {
+  width: 150px;
+  height: 150px;
+  margin-left: -75px;
+  margin-top: -75px;
+  animation: orbitRotate 20s linear infinite;
+}
+#orbit2 {
+  width: 220px;
+  height: 220px;
+  margin-left: -110px;
+  margin-top: -110px;
+  animation: orbitRotate 35s linear reverse infinite;
+}
+#orbit3 {
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -150px;
+  animation: orbitRotate 50s linear infinite;
+}
+#orbit4 {
+  width: 380px;
+  height: 380px;
+  margin-left: -190px;
+  margin-top: -190px;
+  animation: orbitRotate 70s linear reverse infinite;
+}
+#orbit5 {
+  width: 460px;
+  height: 460px;
+  margin-left: -230px;
+  margin-top: -230px;
+  animation: orbitRotate 90s linear infinite;
+}
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 3px rgba(0, 255, 255, 0.6);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  user-select: none;
+  z-index: 5;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  justify-content: center;
+}
+.planet:hover {
+  box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+.planet-label {
+  margin-top: 3px;
+  text-align: center;
+  color: #ddd;
+  font-weight: 500;
+  text-shadow: 0 0 5px #0008;
+  user-select: none;
+  font-size: 10px;
+}
+.hidden {
+  display: none !important;
+}
+.planet-expanded {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin: 0 !important;
+  width: 200px !important;
+  height: 200px !important;
+  z-index: 999 !important;
+  box-shadow: 0 0 40px 15px rgba(255, 255, 200, 0.9);
+  transform: translate(-50%, -50%) !important;
+  transition: transform 0.5s ease !important;
+  background-size: cover !important;
+  background-position: center !important;
+  cursor: default !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 15px !important;
+  color: #fff !important;
+  text-shadow: 0 0 7px #000;
+  border-radius: 50% !important;
+  user-select: text !important;
+}
+#infoBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(10, 10, 30, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 30px #fff8;
+  color: white;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+#infoBox h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px #fff9;
+}
+#infoBox p {
+  white-space: pre-line;
+}
+#infoBox button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 8px 20px;
+  background: #f5d742;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  transition: background 0.3s ease;
+}
+#infoBox button:hover {
+  background: #ffc107;
+}
+
+/* Responsive design cho hệ mặt trời */
+@media (max-width: 768px) {
+  #solarModal h1.title {
+    font-size: 1.8rem;
+    margin-top: 15px;
+  }
+  #solarModal p.subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  #sun {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+  #orbit1 {
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    margin-top: -60px;
+  }
+  #orbit2 {
+    width: 180px;
+    height: 180px;
+    margin-left: -90px;
+    margin-top: -90px;
+  }
+  #orbit3 {
+    width: 240px;
+    height: 240px;
+    margin-left: -120px;
+    margin-top: -120px;
+  }
+  #orbit4 {
+    width: 300px;
+    height: 300px;
+    margin-left: -150px;
+    margin-top: -150px;
+  }
+  #orbit5 {
+    width: 360px;
+    height: 360px;
+    margin-left: -180px;
+    margin-top: -180px;
+  }
+  .planet {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    font-size: 10px;
+  }
+  .planet-label {
+    font-size: 9px;
+    margin-top: 2px;
+  }
+  #infoBox {
+    width: 280px;
+    max-height: 300px;
+    font-size: 13px;
+  }
+  #infoBox h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #solarModal h1.title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  #solarModal p.subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  #sun {
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+  }
+  #orbit1 {
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+  }
+  #orbit2 {
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+    margin-top: -75px;
+  }
+  #orbit3 {
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
+  }
+  #orbit4 {
+    width: 250px;
+    height: 250px;
+    margin-left: -125px;
+    margin-top: -125px;
+  }
+  #orbit5 {
+    width: 300px;
+    height: 300px;
+    margin-left: -150px;
+    margin-top: -150px;
+  }
+  .planet {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 9px;
+  }
+  .planet-label {
+    font-size: 8px;
+    margin-top: 1px;
+  }
+  #infoBox {
+    width: 260px;
+    max-height: 280px;
+    font-size: 12px;
+  }
+  #infoBox h2 {
+    font-size: 1.2rem;
+  }
+}

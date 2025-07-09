@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ mặt trời cá nhân của tôi</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="logo">
+        <img src="img/ChatGPT Image 16_07_53 6 thg 7, 2025.png" alt="logo" />
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <section id="home">
+      <div class="section_right">
+        <h4>Hello, my name is</h4>
+        <h2>Vinh Nguyen</h2>
+        <h5>I'am a <span class="blue">Business Analyst</span></h5>
+        <button id="viewSolarSystem">See Summary</button>
+        <button id="Contact_me">Hire me</button>
+        <div class="link_icon">
+          <a
+            href="https://www.facebook.com/nguyen.viet.vinh.610689"
+            target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/nguyenvietvinh0106/"
+            target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/vinh-nguyen-viet-08383533a/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/VinhNV-06/JS_03_Muc_tieu_A-"
+            target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+      <div class="section_left">
+        <img src="img/1.png" alt="img_right" />
+      </div>
+    </section>
+    <div id="contactModal" class="modal">
+      <div class="modal_content">
+        <span class="close">X</span>
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+          <label for="fullName">Họ tên người liên hệ:</label><br />
+          <input type="text" id="fullName" name="fullName" required />
+          <br /><br />
+          <label for="contactInfo">Email / Số điện thoại:</label><br />
+          <input type="text" id="contactInfo" name="contactInfo" required />
+          <br /><br />
+          <label for="message">Lời nhắn: </label><br />
+          <textarea
+            name="message"
+            id="message"
+            rows="4"
+            placeholder="Ví dụ: Tôi muốn hợp tác về dự án A, thời gian..."
+          ></textarea
+          ><br /><br />
+          <label for="cv">CV đính kèm: </label><br />
+          <input type="file" id="cv" name="cv" /><br /><br />
+          <button type="submit">Gửi</button>
+        </form>
+        <p id="thankYou" style="display: none">Cảm ơn đã liên hệ!</p>
+      </div>
+    </div>
+    <section id="about">
+      <div class="hearding_subtitle">
+        <h2>About me</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          <p>Who I am</p>
+          <hr class="hr hr2" />
+        </div>
+      </div>
+      <div class="about-content">
+        <img
+          src="img/z5770883630637_a426cff080a5b9326d73aa94f7da3cc7.jpg"
+          alt="picture_me"
+        />
+        <p>
+          I'm currently pursuing my studies in Business Analysis, where I'm
+          learning how to bridge the gap between technology and business through
+          data-driven decisions, clear communication, and problem-solving
+          skills. Beyond my academic journey, I'm someone who loves to connect
+          with new people, explore fresh ideas, and truly enjoy life along the
+          way. I believe that building strong relationships and staying curious
+          are key to both personal growth and career success. If you're
+          interested in collaboration, learning together, or simply connecting —
+          don't hesitate to reach out!
+        </p>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="hearding_subtitle">
+        <h2>My service</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          <p>What I provide</p>
+          <hr class="hr hr-2" />
+        </div>
+      </div>
+      <div class="service_content">
+        <div class="content">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h3>System & BA</h3>
+          <p>
+            Analyze business needs, gather requirements, design workflows, and
+            provide system solutions to ensure effective communication between
+            stakeholders and development teams.
+          </p>
+        </div>
+        <div class="content">
+          <i class="fa-solid fa-object-group"></i>
+          <h3>UI/UX Design</h3>
+          <p>
+            Design intuitive, user-friendly interfaces and interactive
+            prototypes using tools like Figma to enhance user experience,
+            improve usability, and visualize product ideas effectively.
+          </p>
+        </div>
+        <div class="content">
+          <i class="fa-solid fa-code"></i>
+          <h3>Frontend Development</h3>
+          <p>
+            Build responsive, interactive web interfaces using HTML, CSS, and
+            JavaScript frameworks like React to deliver smooth user experiences
+            across devices.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="hearding_content">
+        <h2>My skills</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          <p>What I know</p>
+          <hr class="hr hr-2" />
+        </div>
+      </div>
+      <div class="content_skills">
+        <div class="content_left">
+          <h3>Technologies & Tools</h3>
+          <p class="subtitle">
+            Skilled in using modern web technologies and tools such as HTML,
+            CSS, JavaScript, and React to develop responsive interfaces.
+            Proficient with design and development tools like Figma, Git,
+            GitHub, and VS Code to create seamless, visually appealing, and
+            user-focused digital experiences.
+          </p>
+        </div>
+        <div class="content_right">
+          <div class="skill_item">
+            <div class="wrapper_skill_content">
+              <label>HTML</label>
+              <span>90%</span>
+            </div>
+
+            <div class="progress_bar">
+              <div class="progress" id="techProgress"></div>
+            </div>
+          </div>
+
+          <div class="skill_item">
+            <div class="wrapper_skill_content">
+              <label>JavaScript</label> <span>75%</span>
+            </div>
+            <div class="progress_bar">
+              <div class="progress" id="jsProgress"></div>
+            </div>
+          </div>
+          <div class="skill_item">
+            <div class="wrapper_skill_content">
+              <label>Python</label><span>65%</span>
+            </div>
+            <div class="progress_bar">
+              <div class="progress" id="pythonProgress"></div>
+            </div>
+          </div>
+          <div class="skill_item">
+            <div class="wrapper_skill_content">
+              <label>MySQL</label><span>50%</span>
+            </div>
+            <div class="progress_bar">
+              <div class="progress" id="sqlProgress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="hearding_subtitle">
+        <h2>My Projects</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          What I create
+          <hr class="hr hr-2" />
+        </div>
+      </div>
+      <div class="container swiper">
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="img/Just Trip 1.png" alt="project 1 " class="card-image">
+                <p class="badge">Developer</p>
+                <h2 class="card-title"><pre>Portfolio & Carousel <br>        </pre></h2>
+                <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="img/Book.png" alt="project 2 " class="card-image">
+                <p class="badge books">Business Analyst</p>
+                <h2 class="card-title">Library Management System <pre></pre></h2>
+                <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="img/shopping.png" alt="project 3 " class="card-image">
+                <p class="badge shopping">Designer</p>
+                <h2 class="card-title"><pre>E-Commerce Platform <br>        </pre></h2>
+                <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="img/fitness.png" alt="project 4 " class="card-image">
+                <p class="badge gymer">Developer</p>
+                <h2 class="card-title">Mobile App (FitLife Tracker)</h2>
+                <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+
+              </a>
+            </li>
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="img/project 5.png" alt="project 5 " class="card-image">
+                <p class="badge company">Developer</p>
+                <h2 class="card-title">Company Intranet Portal (WorkHub)</h2>
+                <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+
+              </a>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+        </div>
+      </div>
+
+      
+    </section>
+    <section id="contact">
+      <div class="heading_content">
+        <h2>Contact me</h2>
+        <div class="subtitle">
+          <hr class="hr hr-1" />
+          <p>Get in touch</p>
+          <hr class="hr hr-2" />
+        </div>
+      </div>
+      <div class="content_contact">
+        <div class="content_left">
+          <h3>Connect with me</h3>
+          <p class="subtitle-1">
+            Let’s work together or just say hello — I’d love to hear from you!
+          </p>
+          <p class="subtitle-1">
+            Feel free to reach out if you have any questions, opportunities, or
+            just want to connect. I’m always open to discussing new projects or
+            collaborations. Simply fill out the form or use the provided contact
+            details to get in touch.
+          </p>
+          <div class="adress">
+            <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+            <p class="subtitlecontent">
+              <span class="bold">Name</span>
+              <span>Vinh Nguyen</span>
+            </p>
+          </div>
+          <div class="adress">
+            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+            <p class="subtitlecontent">
+              <span class="bold">Adress</span>
+              <span>Hanoi,Vietnam</span>
+            </p>
+          </div>
+          <div class="adress">
+            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+            <p class="subtitlecontent">
+              <span class="bold">Email</span>
+              <span>vinhnv.ptit@gmail.com</span>
+            </p>
+          </div>
+        </div>
+        <div class="content_right">
+          <h3>Message me</h3>
+          <form action="">
+            
+            <input type="text" placeholder="Name" required class="text" />
+            <input type="email" placeholder="Email" required class="text" />
+            
+            <input type="text" placeholder="Subject" required class="text" />
+            <input
+              type="text"
+              placeholder="Message"
+              required
+              class="text area"
+            />
+            <button class="submit">Send message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Hệ Mặt Trời -->
+    <div id="solarModal">
+      <button class="close-modal">X</button>
+      <h1 class="title">Hệ Mặt Trời Cá Nhân của bạn</h1>
+      <p class="subtitle">
+        Click vào từng hành tinh để khám phá thông tin của tôi!
+      </p>
+      <div id="welcomeMessage"></div>
+      <div id="clock"></div>
+      <div id="sun" title="Mặt trời - Tên của bạn"></div>
+      <div id="solarSystem">
+        <div id="orbit1" class="orbit">
+          <div
+            class="planet"
+            data-title="Giới thiệu"
+            data-info="Xin chào! Tôi là [Tên bạn]. Tôi đam mê công nghệ và thiết kế web."
+            style="
+              background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            "
+          >
+            <span class="planet-label">Giới thiệu</span>
+          </div>
+        </div>
+        <div id="orbit2" class="orbit">
+          <div
+            class="planet"
+            data-title="Kỹ năng"
+            data-info="HTML5, CSS3, JavaScript, React, Node.js, Git, Responsive Design"
+            style="
+              background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            "
+          >
+            <span class="planet-label">Kỹ năng</span>
+          </div>
+        </div>
+        <div id="orbit3" class="orbit">
+          <div
+            class="planet"
+            data-title="Dự án"
+            data-info="1. Website cá nhân\n2. Ứng dụng quản lý công việc\n3. Game đơn giản trên trình duyệt"
+            style="
+              background: linear-gradient(135deg, #fbc7a4 0%, #feae96 100%);
+            "
+          >
+            <span class="planet-label">Dự án</span>
+          </div>
+        </div>
+        <div id="orbit4" class="orbit">
+          <div
+            class="planet"
+            data-title="Sở thích"
+            data-info="Đọc sách, nghe nhạc, đi du lịch, chụp ảnh thiên nhiên và học thêm ngoại ngữ."
+            style="
+              background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            "
+          >
+            <span class="planet-label">Sở thích</span>
+          </div>
+        </div>
+        <div id="orbit5" class="orbit">
+          <div
+            class="planet"
+            data-title="Liên hệ"
+            data-info="Email: ban@example.com\nSố điện thoại: 0123456789\nLinkedIn: linkedin.com/in/ban"
+            style="
+              background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            "
+          >
+            <span class="planet-label">Liên hệ</span>
+          </div>
+        </div>
+      </div>
+      <div id="infoBox">
+        <h2 id="infoTitle"></h2>
+        <p id="infoContent"></p>
+        <button id="closeBtn">Quay lại hệ mặt trời</button>
+      </div>
+    </div>
+    <!-- link swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+
+</html>
+
+
